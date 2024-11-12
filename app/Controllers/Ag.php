@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Agent extends BaseController
+class Ag extends BaseController
 {
     
 }

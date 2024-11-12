@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Propriete extends BaseController
+class Prop extends BaseController
 {
     
 }

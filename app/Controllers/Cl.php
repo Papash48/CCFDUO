@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Client extends BaseController
+class Cl extends BaseController
 {
     
 }
