@@ -9,6 +9,12 @@ class Test extends BaseController
 {
  public function getIndex()
    {
+
+    return view('template/header')
+             . view('template/menu')
+             . view('template/footer');
+
+
    /*$unlivre = Livre::find(1);
    echo "Titre du livre : ".$unlivre->titre;
    echo "<br>Catégorie du livre : ".$unlivre->categorie;
