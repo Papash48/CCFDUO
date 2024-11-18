@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Favori extends Model
 {
     public $timestamps = false;
 
-    public function favoris(){
-        return $this->hasMany('App\Models\Favori');
+    public function client(){
+        return $this->belongsTo('App\Models\Client');
     }
     
 }

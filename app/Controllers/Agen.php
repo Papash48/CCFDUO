@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Transac extends BaseController
+class Agen extends BaseController
 {
     
 }
