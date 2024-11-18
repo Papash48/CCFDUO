@@ -10,10 +10,6 @@ class Test extends BaseController
  public function getIndex()
    {
 
-    return view('template/header')
-             . view('template/menu')
-             . view('template/footer');
-
 
    /*$unlivre = Livre::find(1);
    echo "Titre du livre : ".$unlivre->titre;
@@ -90,8 +86,10 @@ class Test extends BaseController
    foreach($unClient->livres as $unLivre){
       echo "<br>".$unLivre->titre." : ".$unLivre->pivot->avis;
    } */
-   $unClient= Client::find(1);
-   echo "Titre du livre : ".$unClient->nom;
-   echo "<br>Catégorie du livre : ".$unClient->prenom;
+   $LesProprietes = Propriete::all();
+   foreach ($LesProprietes as $unePropriete) {
+      echo "Type de propriete : ".$unePropriete->type_propriete ."<br>"; 
+
    }
+}
 }
