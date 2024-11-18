@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Models\Agent;
 use App\Models\Propriete;
 use App\Models\Client;
-use App\Models\Transaction;
+
 class Test extends BaseController
 {
  public function getIndex()
@@ -94,5 +94,5 @@ class Test extends BaseController
      . view('template/footer');
 
    }
-} 
+}
 }
