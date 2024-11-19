@@ -88,9 +88,9 @@ class Test extends BaseController
    } */
   
 
-      return view('template/header')
-     . view('template/menu')
-     . view('template/footer');
+      
+        return view('achat')
+               . view('template/footer');
 
-   }
+}
 }
