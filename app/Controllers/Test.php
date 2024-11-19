@@ -86,13 +86,11 @@ class Test extends BaseController
    foreach($unClient->livres as $unLivre){
       echo "<br>".$unLivre->titre." : ".$unLivre->pivot->avis;
    } */
-   $LesProprietes = Propriete::all();
-   foreach ($LesProprietes as $unePropriete) {
-      echo "Type de propriete : ".$unePropriete->type_propriete ."<br>"; 
+  
 
       return view('template/header')
+     . view('template/menu')
      . view('template/footer');
 
    }
-}
 }
