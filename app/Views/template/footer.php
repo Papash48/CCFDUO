@@ -19,34 +19,36 @@
             Nous proposons une expertise unique dans la vente et la location d'une large gamme de biens : résidences, propriétés agricoles, locaux commerciaux et industriels. 
             Notre mission : concrétiser vos projets immobiliers avec professionnalisme et proximité.
           </p>
-          <nav class="row w-100 align-items-center">
-  <ul class="nav navbar-nav text-center col-9 d-flex justify-content-center">
-    <li class="nav-item mx-3">
-      <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item mx-3">
-      <a class="nav-link" href="achat.html">Achat</a>
-    </li>
-    <li class="nav-item mx-3">
-      <a class="nav-link" href="location.html">Location</a>
-    </li>
-    <li class="nav-item mx-3">
-      <a class="nav-link" href="presentation.html">Présentation</a>
-    </li>
-    <li class="nav-item mx-3">
-      <a class="nav-link" href="agences.html">Nos agences</a>
-    </li>
-  </ul>
-  <!-- Social media icons -->
-  <figure class="col-3 text-right">
-    <a href="#" class="text-dark">
-      <i class="fa fa-facebook-official fa-2x mx-2" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="text-dark">
-      <i class="fa fa-twitter fa-2x mx-2" aria-hidden="true"></i>
-    </a>
-  </figure>
+          <nav class="navbar w-100">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <ul class="nav navbar-nav d-flex">
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="achat.html">Achat</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="location.html">Location</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="presentation.html">Présentation</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="agences.html">Nos agences</a>
+      </li>
+    </ul>
+    <div class="social-icons d-flex">
+      <a href="#" class="text-dark mx-2">
+        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="text-dark mx-2">
+        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
 </nav>
+<hr class="horizontal-line">
 
         </div>
       </div>
@@ -55,3 +57,62 @@
     <p>Akor Adams. &copy;Une réalisation De Barros Mathis et Pruniere Samuel</p>
 
 </footer>
+
+/*
+<footer class="section novi-background footer-advanced bg-gray-700 text-white py-5">
+  <div class="footer-advanced-main">
+    <div class="container">
+      <div class="row row-50">
+        <!-- Section À propos -->
+        <div class="col-lg-4 mb-4">
+          <h5 class="font-weight-bold text-uppercase">À propos de nous</h5>
+          <p>
+            Akor Adams Immobilier, fondée en 1950, est la plus grande agence immobilière et de gestion locative de la région. 
+            Nous proposons une expertise unique dans la vente et la location d'une large gamme de biens : résidences, propriétés agricoles, locaux commerciaux et industriels. 
+            Notre mission : concrétiser vos projets immobiliers avec professionnalisme et proximité.
+          </p>
+        </div>
+
+        <!-- Section Navigation -->
+        <div class="col-lg-4 mb-4">
+          <h5 class="font-weight-bold text-uppercase">Navigation</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="achat.html">Achat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="location.html">Location</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="presentation.html">Présentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="agences.html">Nos agences</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section Réseaux Sociaux -->
+        <div class="col-lg-4 mb-4">
+          <h5 class="font-weight-bold text-uppercase">Suivez-nous</h5>
+          <div class="d-flex">
+            <a href="#" class="text-white mx-2">
+              <i class="fa fa-facebook-official fa-2x"></i>
+            </a>
+            <a href="#" class="text-white mx-2">
+              <i class="fa fa-twitter fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="horizontal-line bg-white">
+      <p class="text-center mt-4">
+        Akor Adams. &copy; Une réalisation De Barros Mathis et Pruniere Samuel
+      </p>
+    </div>
+  </div>
+</footer>
+*/

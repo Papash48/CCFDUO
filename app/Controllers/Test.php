@@ -89,8 +89,10 @@ class Test extends BaseController
   
 
       
-        return view('achat')
-               . view('template/footer');
+        return  view('template/header')
+       //  .view('achat')
+         . view('template/menu')
+         . view('template/footer');
 
 }
 }
