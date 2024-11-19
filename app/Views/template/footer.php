@@ -19,8 +19,39 @@
             Nous proposons une expertise unique dans la vente et la location d'une large gamme de biens : résidences, propriétés agricoles, locaux commerciaux et industriels. 
             Notre mission : concrétiser vos projets immobiliers avec professionnalisme et proximité.
           </p>
+          <nav class="row w-100 align-items-center">
+  <ul class="nav navbar-nav text-center col-9 d-flex justify-content-center">
+    <li class="nav-item mx-3">
+      <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item mx-3">
+      <a class="nav-link" href="achat.html">Achat</a>
+    </li>
+    <li class="nav-item mx-3">
+      <a class="nav-link" href="location.html">Location</a>
+    </li>
+    <li class="nav-item mx-3">
+      <a class="nav-link" href="presentation.html">Présentation</a>
+    </li>
+    <li class="nav-item mx-3">
+      <a class="nav-link" href="agences.html">Nos agences</a>
+    </li>
+  </ul>
+  <!-- Social media icons -->
+  <figure class="col-3 text-right">
+    <a href="#" class="text-dark">
+      <i class="fa fa-facebook-official fa-2x mx-2" aria-hidden="true"></i>
+    </a>
+    <a href="#" class="text-dark">
+      <i class="fa fa-twitter fa-2x mx-2" aria-hidden="true"></i>
+    </a>
+  </figure>
+</nav>
+
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+    <p>Akor Adams. &copy;Une réalisation De Barros Mathis et Pruniere Samuel</p>
+
 </footer>
