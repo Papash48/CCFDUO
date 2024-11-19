@@ -90,7 +90,9 @@ class Test extends BaseController
    foreach ($LesProprietes as $unePropriete) {
       echo "Type de propriete : ".$unePropriete->type_propriete ."<br>"; 
 
-   }
+      return view('template/header')
+     . view('template/footer');
 
    }
+}
 }
