@@ -8,6 +8,7 @@ class Client extends Model
 {
     public $timestamps = false;
 
+    protected $table = 'client';
     public function favoris(){
         return $this->hasMany('App\Models\Favori');
     }
