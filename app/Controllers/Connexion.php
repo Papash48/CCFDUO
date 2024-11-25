@@ -119,8 +119,5 @@ class Connexion extends BaseController
                  . view('login_formAgent',$data)
                  . view('template/footer');
         }
-    }
-
-    
-    
+    } 
 }

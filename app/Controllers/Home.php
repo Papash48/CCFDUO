@@ -9,7 +9,7 @@ class Home extends BaseController
         $data['titre'] = " Bienvenue sur Akor Adams Immobilier ";
             $data['soustitre'] = " Comment souhaitez-vous vous connecter ? ";
             return view('template/header')
-                    . view('AcceuilConnexion',$data)
-                    . view('template/footer');
+             . view('AcceuilConnexion',$data)
+             . view('template/footer');
     }
 }
