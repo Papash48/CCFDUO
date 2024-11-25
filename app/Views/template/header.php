@@ -26,13 +26,13 @@
     <div class="row">
       <!-- Left logo -->
       <figure class="col-xs-5">
-        <img src="public/img/logo_immo_large.jpg" alt="logo lille immo" class="img-fluid hidden-md-down">
+        <img src="public/img/akor.jpg" alt="logo lille immo" class="img-fluid hidden-md-down">
         <img src="public/img/logo_immo_medium.jpg" alt="logo lille immo" class="img-fluid hidden-xs-down hidden-lg-up">
         <img src="public/img/logo_immo_small.jpg" alt="logo lille immo" class="img-fluid hidden-sm-up">
       </figure>
       <!-- Main title on the right -->
       <aside class="col-xs-7 text-xs-center">
-        <h1>Des experts à votre service</h1>
+        <h1>En accord avec vous.</h1>
       </aside>
     </div>
   </div>
