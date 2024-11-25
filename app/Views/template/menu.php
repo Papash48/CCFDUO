@@ -1,7 +1,7 @@
 <nav>
 
   <!-- Personnal space icon -->
-  <a href="/public/">
+  <a href="#">
     <aside class="pull-xs-right m-r-2" id="personal_space">
       <i class="fa fa-user fa-3x m-r-1 hidden-xs-down" aria-hidden="true"></i>
       <i class="fa fa-user fa-2x m-r-1 hidden-sm-up" id="small_user" aria-hidden="true"></i>

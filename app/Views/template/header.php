@@ -15,3 +15,26 @@
   <script src="https://use.fontawesome.com/c6f237cddf.js"></script>
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+<header id="top">
+
+  <!-- Back to top button -->
+  <a href="#top" class="m-b-1"><i class="fa fa-arrow-up fa-lg hidden-sm-up pull-xs-right" aria-hidden="true"></i></a>
+  <a href="#top" class="m-b-1 m-r-1"><i class="fa fa-arrow-up fa-2x hidden-sm-down pull-sm-right" aria-hidden="true"></i></a>
+
+  <!-- Boxed layout inside the header -->
+  <div class="container">
+    <div class="row">
+      <!-- Left logo -->
+      <figure class="col-xs-5">
+        <img src="public/img/logo_immo_large.jpg" alt="logo lille immo" class="img-fluid hidden-md-down">
+        <img src="public/img/logo_immo_medium.jpg" alt="logo lille immo" class="img-fluid hidden-xs-down hidden-lg-up">
+        <img src="public/img/logo_immo_small.jpg" alt="logo lille immo" class="img-fluid hidden-sm-up">
+      </figure>
+      <!-- Main title on the right -->
+      <aside class="col-xs-7 text-xs-center">
+        <h1>Des experts à votre service</h1>
+      </aside>
+    </div>
+  </div>
+
+</header>
