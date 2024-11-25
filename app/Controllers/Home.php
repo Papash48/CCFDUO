@@ -4,8 +4,12 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return "contrôleur par défaut";
+        $data['titre'] = " Bienvenue sur Akor Adams Immobilier ";
+            $data['soustitre'] = " Comment souhaitez-vous vous connecter ? ";
+            return view('template/header')
+                    . view('AcceuilConnexion',$data)
+                    . view('template/footer');
     }
 }
