@@ -86,13 +86,46 @@ class Test extends BaseController
    foreach($unClient->livres as $unLivre){
       echo "<br>".$unLivre->titre." : ".$unLivre->pivot->avis;
    } */
-  
 
-      
-        return  view('template/header')
-       //  .view('achat')
-         . view('template/menu')
-         . view('template/footer');
 
+   echo "test controller de base";
 }
+
+public function getTestConnexionClient()
+   {
+      $UnePropriete= Propriete::find(2);
+      echo $UnePropriete->localisation;
+      echo "<br>";
+       
+      $UnClient= Client::find(2);
+      echo $UnClient->nom;
+      echo "<br>";
+
+   
+      $UnAgent= Agent::find(2);
+      echo $UnAgent->nom;
+      echo "<br>";
+      
+
+      echo "test controller de base version client";
+   }
+
+   public function getTestConnexionAgent()
+   {
+      $UnePropriete= Propriete::find(2);
+      echo $UnePropriete->localisation;
+      echo "<br>";
+       
+      $UnClient= Client::find(2);
+      echo $UnClient->nom;
+      echo "<br>";
+
+   
+      $UnAgent= Agent::find(2);
+      echo $UnAgent->nom;
+      echo "<br>";
+
+      echo "test controller de base version agent";
+      
+   }
 }
