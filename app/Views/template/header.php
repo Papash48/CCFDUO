@@ -1,26 +1,17 @@
-<footer class="section novi-background footer-advanced bg-gray-700">
-<meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="public/images/footer-gallery-1-85x85" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800%7CPoppins:300,400,700">
-    <link rel="stylesheet" href="public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/css/fonts.css">
-    <link rel="stylesheet" href="public/css/style.css" id="main-styles-link">
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-  <div class="rd-navbar-aside-outer">
-              <div class="rd-navbar-aside">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img src="images/logo-default-151x44.png" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x"/></a>
-                </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Akor Adams</title>
+  <meta name="description" content="Bienvenue chez Lille Immo, forts de nos 15 ans d'expérience nous nous assurons de trouver LE bien qui vous convient">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-              </div>
-            </div>
-      </div>
-    </div>
-  </div>
-</footer>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="icon" type="public/image/ico" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/normalize.css">
+  <link rel="stylesheet" href="public/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Prompt%7cOpen+Sans%7cReem+Kufi" rel="stylesheet">
+  <script src="https://use.fontawesome.com/c6f237cddf.js"></script>
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
