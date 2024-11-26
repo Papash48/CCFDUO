@@ -88,11 +88,9 @@ class Test extends BaseController
    } */
 
 
-   echo "test controller de base";
-   return view('template/header')
-            . view('template/menu')
-            . view('template/footer');
-    
+   
+
+
 }
 
 public function getTestConnexionClient()
