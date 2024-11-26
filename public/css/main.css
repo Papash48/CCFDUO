@@ -570,4 +570,8 @@ footer h4 {
     h3 {
         page-break-after: avoid;
     }
+    td {
+      border-bottom: 2px solid black;
+    
+    }
 }

@@ -10,16 +10,15 @@ class Propriet extends BaseController
 {
     public function getPropriete()
     {
-        $lesProprietes = Propriete::all();
-        foreach ($lesProprietes as $propriete) {
-            echo $propriete->type_propriete ."<br>";
-            echo $propriete->nb_pieces ."<br>";
-            echo $propriete->localisation ."<br>";
-            echo $propriete->prix ."<br>";
-            echo $propriete->description ."<br>";
-            echo $propriete->charges ."<br>";
-            echo $propriete->EtatPropriete ."<br>";
-            echo "<hr>";
-        }
+        $data['titre'] = "Liste des propriétés";
+        $data['soustitre'] = "";        
+        $data['proprietes'] = Propriete::all();
+        
+        return view('template/header')
+             . view('template/menu')
+             . view('propriete_home',$data)
+             . view('template/footer');
     }
 }    
+
+

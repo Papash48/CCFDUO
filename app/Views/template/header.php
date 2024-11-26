@@ -26,9 +26,9 @@
     <div class="row">
       <!-- Left logo -->
       <figure class="col-xs-5">
-        <img src="public/img/akor.jpg" alt="logo lille immo" class="img-fluid hidden-md-down">
-        <img src="public/img/logo_immo_medium.jpg" alt="logo lille immo" class="img-fluid hidden-xs-down hidden-lg-up">
-        <img src="public/img/logo_immo_small.jpg" alt="logo lille immo" class="img-fluid hidden-sm-up">
+        <img src="public/img/akor.jpg" alt="logo Akor Adams" class="img-fluid hidden-md-down">
+        <img src="public/img/akor.jpg" alt="logo Akor Adams" class="img-fluid hidden-xs-down hidden-lg-up">
+        <img src="public/img/akor.jpg" alt="logo Akor Adams" class="img-fluid hidden-sm-up">
       </figure>
       <!-- Main title on the right -->
       <aside class="col-xs-7 text-xs-center">
