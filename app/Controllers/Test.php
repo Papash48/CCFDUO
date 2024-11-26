@@ -99,7 +99,7 @@ public function getTestConnexionClient()
       echo $UnePropriete->localisation;
       echo "<br>";
        
-      $UnClient= Client::find(2);
+      $UnClient= Client::find(8);
       echo $UnClient->nom;
       echo "<br>";
 
@@ -118,8 +118,8 @@ public function getTestConnexionClient()
       echo $UnePropriete->localisation;
       echo "<br>";
        
-      $UnClient= Client::find(2);
-      echo $UnClient->nom;
+      $UnClient = Client::find(7);
+      echo $UnClient->prenom;
       echo "<br>";
 
    

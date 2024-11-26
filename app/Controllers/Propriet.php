@@ -19,6 +19,19 @@ class Propriet extends BaseController
              . view('propriete_home',$data)
              . view('template/footer');
     }
+
+    public function getInfo($id)
+    {
+        $data['titre'] = "Voici la propriété ".$id;
+        $data['soustitre'] = "Voici ses informations.";        
+        $data['propriete'] = Propriete::find($id);
+        
+        return view('template/header')
+             . view('template/menu')
+             . view('propriete_info',$data)
+             . view('template/footer');
+        
+    }
 }    
 
 
