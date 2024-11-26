@@ -88,7 +88,9 @@ class Test extends BaseController
    } */
 
 
-   echo "test controller de base";
+   
+
+
 }
 
 public function getTestConnexionClient()
