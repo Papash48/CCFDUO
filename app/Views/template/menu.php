@@ -8,11 +8,13 @@
       <span>Espace<br>personnel</span>
     </aside>
   </a>
+  
   <!-- Navigation -->
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
-  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2" style="background-color: #463f32;">
     <ul class="nav navbar-nav">
       <li class="nav-item m-x-1">
         <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
