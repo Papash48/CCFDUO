@@ -48,9 +48,11 @@ class Connexion extends BaseController
             $clientModele = new Client();
             if ($clientModele->estClient($login,$pwd)) {
                 $session = session();
+                $id = Client::where('nom', $login)->where('mdp', $pwd)->get()[0]->id;
                 $sessiondata = array(
                        'nom'  => $this->request->getPost('login'),
-                       'admin'=> true
+                       'id'  => $id,
+                       'type' => "client"
                     );
                 $session->set($sessiondata);
                 return redirect()->to('test/TestConnexionClient');
@@ -98,9 +100,11 @@ class Connexion extends BaseController
             $agentModele = new Agent();
             if ($agentModele->estAgent($login,$pwd)) {
                 $session = session();
+                $id = Agent::where('nom', $login)->where('mdp', $pwd)->get()[0]->id;
                 $sessiondata = array(
                        'nom'  => $this->request->getPost('login'),
-                       'admin'=> true
+                        'id'  => $id,
+                        'type' => "agent"
                     );
                 $session->set($sessiondata);
                 return redirect()->to('test/TestConnexionAgent');
@@ -121,9 +125,21 @@ class Connexion extends BaseController
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-                 . view('template/menu')
-                 . view('login_formAgent',$data)
-                 . view('template/footer');
+             . view('template/menu')
+             . view('login_formAgent',$data)
+             . view('template/footer');
         }
     } 
+
+    public function getCompte()
+    {
+        $session = session();
+        $data['id'] = $session->get('id');
+        $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
+        $data['soustitre'] = "Voici les informations de votre compte";
+        return view('template/header')
+            . view('template/menu')
+            . view('info_compte',$data)
+            . view('template/footer');
+    }
 }

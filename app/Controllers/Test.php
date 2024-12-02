@@ -110,6 +110,10 @@ public function getTestConnexionClient()
       
 
       echo "test controller de base version client";
+
+      $session = session();
+      echo "<br>";
+      echo $session->get('id');
    }
 
    public function getTestConnexionAgent()
@@ -128,6 +132,8 @@ public function getTestConnexionClient()
       echo "<br>";
 
       echo "test controller de base version agent";
-      
+      $session = session();
+      echo "<br>";
+      echo $session->get('id');
    }
 }
