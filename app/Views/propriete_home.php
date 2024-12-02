@@ -12,16 +12,16 @@
                     $cpt=0;
                     echo "<tr>";
                     foreach ($proprietes as $propriete) {
-                        echo "<td width='30%' class='text-center pl-3 pr-3'> <a href='info/$propriete->id' >";
-                        echo"<br>";
+                        echo "<td width=35%' class='text-center'> <a href='info/$propriete->id' >";
+                        echo "<br>";
                         echo img('/public/img/'.$propriete->type_propriete."_".$propriete->id.'.jpg',true,'class="img-fluid rounded"');echo"<br>";
                         echo $propriete->type_propriete ."<br>";
-                        echo $propriete->nb_pieces ."<br>";
-                        echo $propriete->localisation ."<br>";
-                        echo $propriete->prix ."<br>";
+                        echo "Nombres de pièces : ".$propriete->nb_pieces ."<br>";
+                        echo "Localisation : ".$propriete->localisation ."<br>";
+                        echo "Prix : ".$propriete->prix ."<br>";
                         echo $propriete->description ."<br>";
-                        echo $propriete->charges ."<br>";
-                        echo $propriete->EtatPropriete ."<br>";
+                        echo "Montant des charges : ".$propriete->charges ."<br>";
+                        echo "Etat de la propriété : ".$propriete->EtatPropriete ."<br>";
                         echo "</a></td>";
                         $cpt++;
                         if ($cpt%3==0) {
