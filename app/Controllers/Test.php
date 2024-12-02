@@ -86,11 +86,6 @@ class Test extends BaseController
    foreach($unClient->livres as $unLivre){
       echo "<br>".$unLivre->titre." : ".$unLivre->pivot->avis;
    } */
-
-
-   
-
-
 }
 
 public function getTestConnexionClient()
