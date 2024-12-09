@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('public/css/affich_maison.css'); ?>">
 
 <section>
 

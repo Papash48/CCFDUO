@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
 <section>
     <div class="card">
         <div class="card-body">

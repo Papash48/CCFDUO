@@ -25,6 +25,7 @@
               <i class="fa fa-twitter fa-2x"></i>
             </a>
           </div>
+          
         </div>
       </div>
       <hr class="horizontal-line bg-white">
