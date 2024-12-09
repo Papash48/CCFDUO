@@ -6,7 +6,6 @@
             <?php echo form_open('connexion/creationcompte'); ?>
                 <div class="row">
                     <div class="col-md-1 text-end">
-                        <i class="fa-solid fa-user align-bottom"></i>
                     </div>
                     <div class="col-md-7">
                         <?php

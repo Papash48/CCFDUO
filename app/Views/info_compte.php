@@ -8,13 +8,8 @@
             <div class="col-sm">
                 <h2><?php echo $soustitre ?></h2>
                 <?php
-                       if($session->get('type') == agent)
-                       {
+                       if($session == true){
                             
-                       }
-                       else
-                       {
-
                        }
                 ?>
                 </table>

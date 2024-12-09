@@ -55,7 +55,8 @@ class Connexion extends BaseController
                        'type' => "client"
                     );
                 $session->set($sessiondata);
-                return redirect()->to('test/TestConnexionClient');
+                return redirect()->to('propriet/propriete');
+                //return redirect()->to('test/TestConnexionClient');
             }
             else {
             // Si erreur d'identification
@@ -73,7 +74,7 @@ class Connexion extends BaseController
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-            . view('template/menu')
+            . view('template/menu_acceuil')
             . view('login_formClient',$data)
             . view('template/footer');
         }
@@ -107,14 +108,15 @@ class Connexion extends BaseController
                         'type' => "agent"
                     );
                 $session->set($sessiondata);
-                return redirect()->to('test/TestConnexionAgent');
+                return redirect()->to('propriet/propriete');
+                //return redirect()->to('test/TestConnexionAgent');
             }
             else {
             // Si erreur d'identification
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
                 $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant qu'utilisateur";
                 return view('template/header')
-                . view('template/menu')
+                . view('template/menu_acceuil')
                 . view('login_formAgent',$data)
                 . view('template/footer');
             }
@@ -133,7 +135,7 @@ class Connexion extends BaseController
 
     public function getCompte()
     {
-        $session = session();
+        $data['session'] = $session = session();
         $data['id'] = $session->get('id');
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
         $data['soustitre'] = "Voici les informations de votre compte";
