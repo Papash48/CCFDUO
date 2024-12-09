@@ -11,21 +11,21 @@ class Connexion extends BaseController
     public function getClient()
     {
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
-                $data['soustitre'] = "Veuillez saisir vos identifiants de connexion en tant que client.";
-                return view('template/header')
-                     . view('template/menu')
-                     . view('login_formClient',$data)
-                     . view('template/footer');
+        $data['soustitre'] = "Veuillez saisir vos identifiants de connexion en tant que client.";
+        return view('template/header')
+        . view('template/menu')
+        . view('login_formClient',$data)
+        . view('template/footer');
     }
 
     public function getAgent()
     {
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
-                $data['soustitre'] = "Veuillez saisir vos identifiants de connexion en tant qu'agent. ";
-                return view('template/header')
-                     . view('template/menu')
-                     . view('login_formAgent',$data)
-                     . view('template/footer');
+        $data['soustitre'] = "Veuillez saisir vos identifiants de connexion en tant qu'agent. ";
+        return view('template/header')
+        . view('template/menu')
+        . view('login_formAgent',$data)
+        . view('template/footer');
     }
 
 
@@ -62,9 +62,9 @@ class Connexion extends BaseController
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
                 $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant qu'utilisateur";
                 return view('template/header')
-                     . view('template/menu')
-                     . view('login_formClient',$data)
-                     . view('template/footer');
+                . view('template/menu')
+                . view('login_formClient',$data)
+                . view('template/footer');
             }
         }
         else {
@@ -73,9 +73,9 @@ class Connexion extends BaseController
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-                 . view('template/menu')
-                 . view('login_formClient',$data)
-                 . view('template/footer');
+            . view('template/menu')
+            . view('login_formClient',$data)
+            . view('template/footer');
         }
     }
 
@@ -114,9 +114,9 @@ class Connexion extends BaseController
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
                 $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant qu'utilisateur";
                 return view('template/header')
-                     . view('template/menu')
-                     . view('login_formAgent',$data)
-                     . view('template/footer');
+                . view('template/menu')
+                . view('login_formAgent',$data)
+                . view('template/footer');
             }
         }
         else {
@@ -138,8 +138,32 @@ class Connexion extends BaseController
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
         $data['soustitre'] = "Voici les informations de votre compte";
         return view('template/header')
-            . view('template/menu')
-            . view('info_compte',$data)
-            . view('template/footer');
+        . view('template/menu')
+        . view('info_compte',$data)
+        . view('template/footer');
+    }
+
+    public function getCreation()
+    {
+        $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
+        $data['soustitre'] = "Veuillez créer votre compte";
+        return view('template/header')
+        . view('template/menu')
+        . view('creation_compte',$data)
+        . view('template/footer');
+    }
+
+    public function postCreationcompte()
+    {
+        $client = new Client();
+        $client->nom = $this->request->getPost('nom');
+        $client->prenom = $this->request->getPost('prenom');
+        $client->datedenaissance = $this->request->getPost('daten');
+        $client->mail = $this->request->getPost('mail');
+        $client->num = $this->request->getPost('num');
+        $client->mdp = $this->request->getPost('mdp');
+        $client->save();
+
+        return redirect()->to('connexion/client');
     }
 }

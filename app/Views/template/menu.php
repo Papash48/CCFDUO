@@ -21,14 +21,8 @@
       <li class="nav-item m-x-1">
         <a class="nav-link" href="achat.html">Achat</a>
       </li>
-      <li class="nav-item m-x-1">
-        <a class="nav-link" href="location.html">Location</a>
-      </li>
       <li class="nav-item m-x-1 on">
         <a class="nav-link" href="presentation.html">Présentation</a>
-      </li>
-      <li class="nav-item m-x-1">
-        <a class="nav-link" href="agences.html">Nos agences</a>
       </li>
     </ul>
   </div>

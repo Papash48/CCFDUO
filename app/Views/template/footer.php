@@ -13,28 +13,7 @@
           </p>
         </div>
 
-        <!-- Section Navigation -->
-        <div class="col-lg-4 mb-4">
-          <h5 class="font-weight-bold text-uppercase">Navigation</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="index.html">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="achat.html">Achat</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="location.html">Location</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="presentation.html">Présentation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="agences.html">Nos agences</a>
-            </li>
-          </ul>
-        </div>
-
+       
         <!-- Section Réseaux Sociaux -->
         <div class="col-lg-4 mb-4">
           <h5 class="font-weight-bold text-uppercase">Suivez-nous</h5>
