@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
 
 <section>
 
@@ -14,7 +15,7 @@
                     foreach ($proprietes as $propriete) {
                         echo "<td width=35%' class='text-center'> <a href='info/$propriete->id' >";
                         echo "<br>";
-                        echo img('/public/img/'.$propriete->type_propriete."_".$propriete->id.'.jpg',true,'class="img-fluid rounded"');echo"<br>";
+                        echo img('public/img/'.$propriete->type_propriete."_".$propriete->id.'.jpg',true,'class="img-fluid rounded"');echo"<br>";
                         echo $propriete->type_propriete ."<br>";
                         echo "Nombres de pièces : ".$propriete->nb_pieces ."<br>";
                         echo "Localisation : ".$propriete->localisation ."<br>";

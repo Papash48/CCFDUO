@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Exemple</title>
+
     <style>
         /* Overlay de fond pour le popup */
         #popup-overlay {
@@ -72,7 +67,7 @@
     </div>
 
     <script>
-        // Afficher le popup lors du chargement de la page
+        // Afficher le pop-up lors du chargement de la page
         document.addEventListener('DOMContentLoaded', function () {
             const popupOverlay = document.getElementById('popup-overlay');
             popupOverlay.classList.add('active');
