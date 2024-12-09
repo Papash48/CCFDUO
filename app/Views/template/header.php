@@ -3,9 +3,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Akor Adams</title>
   
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-  <link rel="stylesheet" href="public/css/normalize.css">
   <link rel="stylesheet" href="public/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Prompt%7cOpen+Sans%7cReem+Kufi" rel="stylesheet">
   <script src="https://use.fontawesome.com/c6f237cddf.js"></script>
