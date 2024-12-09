@@ -1,3 +1,75 @@
+/* Style global pour la section */
+section {
+  padding: 2rem; /* Espacement interne */
+  background-color: #f8f9fa; /* Couleur de fond douce */
+  font-family: Arial, sans-serif; /* Police générale */
+  color: #333; /* Couleur du texte */
+}
+
+/* Titre principal */
+section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #463f32; /* Brun foncé */
+}
+
+/* Sous-titre */
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555; /* Gris foncé */
+}
+
+/* Conteneur principal */
+section .container-fluid {
+  padding: 1rem;
+}
+
+/* Style des liens */
+section a {
+  display: block; /* Les liens s'affichent en colonne */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff; /* Bleu */
+  text-decoration: none; /* Supprimer le soulignement */
+  margin: 0.5rem 0; /* Espacement vertical */
+  padding: 0.5rem 1rem; /* Espacement interne */
+  border: 1px solid transparent; /* Bordure par défaut */
+  border-radius: 4px; /* Coins arrondis */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Interaction des liens */
+section a:hover {
+  background-color: #007bff; /* Fond bleu au survol */
+  color: #fff; /* Texte blanc */
+  border-color: #0056b3; /* Bordure légèrement plus foncée */
+}
+
+/* Colonne */
+section .col-sm {
+  text-align: center; /* Centrer le contenu */
+  margin: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  section h1 {
+    font-size: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  section a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
 nav {
   background-color: #463f32; /* Couleur de fond du menu */
   padding: 0.5rem 1rem; /* Espacement intérieur */
@@ -172,6 +244,66 @@ footer .col-lg-4 {
   }
 }
 
+
+/* pop-up avec les 3 boutons*/
+  
+    #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden; /* Masqué par défaut */
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease;
+        }
+
+        #popup-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Conteneur du popup */
+        #popup {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #popup h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .popup-button {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-button:hover {
+            background: #0056b3;
+        }
+
+
+
+
+
 /*
 
 ~~~~~~~~~End footer settings~~~~~~~~
@@ -217,13 +349,6 @@ footer .col-lg-4 {
 
 }
 
-/* ##################################################################### */
-/* ########################   LARGE DESKTOPS   ######################### */
-/* ##################################################################### */
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
-}
 
 
 
@@ -235,177 +360,3 @@ footer .col-lg-4 {
 
 
 
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after,
-    *:first-letter,
-    *:first-line {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-    td {
-      border-bottom: 2px solid black;
-    
-    }
-}

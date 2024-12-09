@@ -4,10 +4,8 @@
   <title>Akor Adams</title>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-  <link rel="stylesheet" href="public/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Prompt%7cOpen+Sans%7cReem+Kufi" rel="stylesheet">
   <script src="https://use.fontawesome.com/c6f237cddf.js"></script>
-  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <header id="top">
 
@@ -16,7 +14,6 @@
     <div class="row">
       <!-- Left logo -->
       <figure class="col-xs-5">
-        <img src="public/img/akor.jpg" alt="logo Akor Adams" class="img-fluid hidden-md-down">
         <img src="public/img/akor.jpg" alt="logo Akor Adams" class="img-fluid hidden-xs-down hidden-lg-up">
         <img src="public/img/akor.jpg" alt="logo Akor Adams" class="img-fluid hidden-sm-up">
       </figure>

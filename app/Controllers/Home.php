@@ -10,7 +10,7 @@ class Home extends BaseController
         $data['soustitre'] = " Comment souhaitez-vous vous connecter ? ";
         return view('template/header')
          . view('template/menu')
-         . view('AcceuilConnexion',$data)
+         . view('popup_view',$data)
          . view('template/footer');
     }
 }
