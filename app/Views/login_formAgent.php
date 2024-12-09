@@ -29,7 +29,6 @@
                 <?php } ?>
                 <br><div class="row">
                     <div class="col-md-1 text-end">
-                        <i class="fa-solid fa-key align-bottom"></i>
                     </div>
                     <div class="col-md-7">
                         <?php    
