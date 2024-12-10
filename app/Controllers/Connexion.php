@@ -61,7 +61,7 @@ class Connexion extends BaseController
             else {
             // Si erreur d'identification
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
-                $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant qu'utilisateur";
+                $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant qu'agent";
                 return view('template/header')
                 . view('template/menu')
                 . view('login_formClient',$data)
