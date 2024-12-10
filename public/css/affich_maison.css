@@ -1,0 +1,66 @@
+/* Conteneur général */
+.container-fluid {
+    background-color: #f5f5f5; /* Gris clair pour plus de contraste */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    margin: 0 auto; /* Centrer le conteneur sur la page */
+}
+
+/* Image */
+.custom-img {
+    width: 100%; /* L'image prend 100% de la largeur de son conteneur */
+    max-width: 600px; /* Taille maximale de l'image (comme un maximum raisonnable pour l'affichage) */
+    height: auto;
+    border: 2px solid #004d40; /* Bordure bleu-vert */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre */
+    margin: 20px 0; /* Espacement pour ne pas coller à d'autres éléments */
+}
+
+/* Conteneur des informations */
+.details {
+    padding: 15px;
+    background-color: #ffffff; /* Blanc pour les détails */
+    border: 1px solid #cccccc; /* Bordure légère */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    margin-left: 20px;
+}
+
+/* Conteneur de l'image */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Conteneur des détails */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+/* Espacement entre les paragraphes */
+.details p {
+    margin: 8px 0;
+}
+
+/* Flexbox pour l'alignement de l'image et des détails */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Pour les petits écrans, on empile les éléments */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .details-container {
+        margin-top: 20px;
+    }
+}
