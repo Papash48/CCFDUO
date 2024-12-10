@@ -135,15 +135,40 @@ class Connexion extends BaseController
 
     public function getCompte()
     {
+        $session = session();
+        if($session->type === 'agent')
+        {
         $data['session'] = $session = session();
         $data['id'] = $session->get('id');
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
-        $data['soustitre'] = "Voici les informations de votre compte";
+        $data['soustitre'] = "Voici les informations de votre compte agent";
         return view('template/header')
         . view('template/menu')
-        . view('info_compte',$data)
+        . view('info_compte_agent',$data)
         . view('template/footer');
-    }
+
+
+
+        }
+        else if($session->type === 'client') {
+            $data['session'] = $session = session();
+            $data['id'] = $session->get('id');
+            $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
+            $data['soustitre'] = "Voici les informations de votre compte client";
+            return view('template/header')
+            . view('template/menu')
+            . view('info_compte_client',$data)
+            . view('template/footer');
+        }
+        else {
+            $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
+            $data['soustitre'] = "Veuillez vous connecter";
+            return view('template/header')
+            . view('template/menu')
+            . view('AcceuilConnexion',$data)
+            . view('template/footer');
+        }
+        }
 
     public function getCreation()
     {
@@ -168,4 +193,17 @@ class Connexion extends BaseController
 
         return redirect()->to('connexion/client');
     }
+
+    public function getLogout()
+    {
+        $session = session();
+        $session->destroy(); 
+        $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
+        $data['soustitre'] = "Veuillez créer votre compte";
+        return view('template/header')
+        . view('template/menu')
+        . view('AcceuilConnexion',$data)
+        . view('template/footer');
+    }
+
 }

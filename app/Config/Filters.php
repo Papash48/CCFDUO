@@ -105,7 +105,5 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
-        'AuthProtect' => ['before' => ['propriet/propriete'] ],
-        'AuthProtect' => ['before' => ['connexion/compte'] ] 
     ];
 }
