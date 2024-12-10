@@ -24,6 +24,9 @@
       <li class="nav-item m-x-1 on">
         <a class="nav-link" href="presentation.html">Présentation</a>
       </li>
+      <li class="nav-item m-x-1 on">
+        <a class="nav-link" href="../connexion/logout">Déconnexion</a>
+      </li>
     </ul> 
   </div>
 

@@ -11,7 +11,7 @@ class AuthProtect implements FilterInterface
     {
         $session = session();
         if($session->has('client') || $session->has('agent') ) {
-            if(!$session->get('client') || !$session->get('agent')){
+            if(!$session->get('type','client') || !$session->get('type','agent')){
                 return redirect()->to('/');
             }
         }
