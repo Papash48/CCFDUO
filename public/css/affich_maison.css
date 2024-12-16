@@ -10,7 +10,7 @@
 /* Image */
 .custom-img {
     width: 100%; /* L'image prend 100% de la largeur de son conteneur */
-    max-width: 600px; /* Taille maximale de l'image (comme un maximum raisonnable pour l'affichage) */
+    max-width: 100px; /* Taille maximale de l'image (comme un maximum raisonnable pour l'affichage) */
     height: auto;
     border: 2px solid #004d40; /* Bordure bleu-vert */
     border-radius: 8px;
