@@ -5,6 +5,8 @@
             <h1><?php echo $titre;?></h1>
             <h2 class="text-muted"><?php echo $soustitre;?></h2>
             <?php echo form_open('connexion/loginAgent'); ?>
+                <?php $session = session();
+                $session->destroy();?>
                 <div class="row">
                     <div class="col-md-1 text-end">
                     </div>
