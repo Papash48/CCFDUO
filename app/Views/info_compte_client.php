@@ -13,7 +13,6 @@
                 <div class="col-md-1 text-end"></div>
                 <div class="col-md-7">
                     <?php
-                    // Champ pour le nom
                     echo "<label for='nom'>Nom:</label>";
                     $input = array(
                         'name'  => 'nom',
@@ -24,7 +23,6 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour le prénom
                     echo "<label for='prenom'>Prénom:</label>";
                     $input = array(
                         'name'  => 'prenom',
@@ -35,7 +33,6 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour la date de naissance (type date)
                     echo "<label for='datedenaissance'>Date de naissance:</label>";
                     $input = array(
                         'name'  => 'datedenaissance',
@@ -47,7 +44,6 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour l'email
                     echo "<label for='mail'>Email:</label>";
                     $input = array(
                         'name'  => 'mail',
@@ -58,7 +54,6 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour le numéro de téléphone
                     echo "<label for='num'>Numéro de téléphone:</label>";
                     $input = array(
                         'name'  => 'num',
@@ -69,7 +64,6 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour le mot de passe
                     echo "<label for='mdp'>Mot de passe:</label>";
                     $input = array(
                         'name'  => 'mdp',
