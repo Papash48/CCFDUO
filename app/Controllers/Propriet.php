@@ -32,6 +32,17 @@ class Propriet extends BaseController
              . view('template/footer');
         
     }
+
+    public function getPropriet_ajout(){
+        $data['titre'] = "Quel type de propriété";
+        $data['soustitre'] = "";
+
+        return view('template/header')
+            . view('template/menu')
+            . view('ajout_prop',$data)
+            . view('template/footer');
+    }
 }    
+
 
 

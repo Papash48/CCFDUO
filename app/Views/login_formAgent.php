@@ -10,7 +10,6 @@
                     </div>
                     <div class="col-md-7">
                         <?php
-                        // input login
                         $input = array(
                             'name'          => 'login',
                             'placeholder'   => 'Nom d\'utilisateur de l\'agent',
@@ -56,7 +55,6 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-2">
                         <?php
-                        // bouton submit
                         $subm = array(
                             'type'      => 'submit',
                             'content'   => 'Se connecter',

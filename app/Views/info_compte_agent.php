@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('public/css/modif.css'); ?>">
 <section>
 <?php use App\Models\Agent; ?>
 <div class="card">
@@ -11,8 +13,7 @@
                 </div>
                 <div class="col-md-7">
                     <?php
-                    // Champ pour le nom
-                    echo "<label for='nom'>Nom:</label>";
+                    echo "<label for='nom'>Votre nom:</label>";
                     $input = array(
                         'name'  => 'nom',
                         'value' => $agent->nom,
@@ -22,8 +23,7 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour le prénom
-                    echo "<label for='prenom'>Prénom:</label>";
+                    echo "<label for='prenom'>Votre prénom:</label>";
                     $input = array(
                         'name'  => 'prenom',
                         'value' => $agent->prenom,
@@ -33,8 +33,7 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour le numéro de téléphone
-                    echo "<label for='num'>Numéro de téléphone:</label>";
+                    echo "<label for='num'>Votre numéro de téléphone:</label>";
                     $input = array(
                         'name'  => 'num',
                         'value' => $agent->num,
@@ -44,8 +43,7 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour l'email
-                    echo "<label for='mail'>Email:</label>";
+                    echo "<label for='mail'>Votre email:</label>";
                     $input = array(
                         'name'  => 'mail',
                         'value' => $agent->mail,
@@ -55,8 +53,7 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Champ pour le mot de passe
-                    echo "<label for='mdp'>Mot de passe:</label>";
+                    echo "<label for='mdp'>Votre mot de passe:</label>";
                     $input = array(
                         'name'  => 'mdp',
                         'value' => $agent->mdp,
@@ -66,7 +63,6 @@
                     echo form_input($input);
                     echo "<br>";
 
-                    // Bouton d'enregistrement
                     $subm = array(
                         'type'    => 'submit',
                         'content' => 'Enregistrer les informations',

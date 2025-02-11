@@ -8,7 +8,7 @@
     </aside>
   </a>
   
-  <!-- Navigation -->
+
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
@@ -16,14 +16,16 @@
   <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2" style="background-color: #463f32;">
     <ul class="nav navbar-nav">
       <li class="nav-item m-x-1">
-        <a class="nav-link" href="../propriet/propriete">Accueil<span class="sr-only">(current)</span></a>
+
+        <?php echo anchor('propriet/propriete','Accueil<span class="sr-only">(current)</span>','class="nav-link"'); ?>
+
       </li>
-      <li class="nav-item m-x-1">
-        <a class="nav-link" href="achat.html">Achat</a>
-      </li>
-      <li class="nav-item m-x-1 on">
-        <a class="nav-link" href="presentation.html">Présentation</a>
-      </li>
+        <?php $session = session();
+            if($session->type === 'agent'){
+                echo "<li class='nav-item m-x-1'>";
+                echo "<a class= 'nav-link ' href='../propriet/propriet_ajout'>Ajouter une propriété <span class='sr-only'>(current)</span></a>";
+                echo "</li>";
+            }?>
       <li class="nav-item m-x-1 on">
         <a class="nav-link" href="../connexion/logout">Déconnexion</a>
       </li>
