@@ -9,8 +9,7 @@
 
 /* Image */
 .custom-img {
-    width: 100%; /* L'image prend 100% de la largeur de son conteneur */
-    max-width: 100px; /* Taille maximale de l'image (comme un maximum raisonnable pour l'affichage) */
+    width: 80%; /* L'image prend 100% de la largeur de son conteneur */
     height: auto;
     border: 2px solid #004d40; /* Bordure bleu-vert */
     border-radius: 8px;
@@ -64,3 +63,23 @@
         margin-top: 20px;
     }
 }
+
+    .thumbnail-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .thumbnail-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    .thumbnail-img:hover {
+        transform: scale(1.1);
+        border: 2px solid #007bff;
+    }
