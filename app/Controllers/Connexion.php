@@ -56,7 +56,6 @@ class Connexion extends BaseController
                     );
                 $session->set($sessiondata);
                 return redirect()->to('propriet/propriete');
-                //return redirect()->to('test/TestConnexionClient');
             }
             else {
             // Si erreur d'identification
@@ -109,7 +108,6 @@ class Connexion extends BaseController
                     );
                 $session->set($sessiondata);
                 return redirect()->to('propriet/propriete');
-                //return redirect()->to('test/TestConnexionAgent');
             }
             else {
             // Si erreur d'identification
