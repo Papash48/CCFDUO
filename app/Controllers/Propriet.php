@@ -23,7 +23,7 @@ class Propriet extends BaseController
     public function getInfo($id)
     {
         $data['titre'] = "Voici la propriété ".$id;
-        $data['soustitre'] = "Voici ses informations.";        
+        $data['soustitre'] = "Voici ses informations : ";        
         $data['propriete'] = Propriete::find($id);
         
         return view('template/header')

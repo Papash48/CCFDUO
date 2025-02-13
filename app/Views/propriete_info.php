@@ -1,17 +1,30 @@
 <link rel="stylesheet" href="<?= base_url('public/css/affich_maison.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
+
 <section>
     <h1><?php echo $titre; ?></h1>
 	
     <div class="container-fluid">
         <div class="row">
-            <!-- Colonne de l'image -->
-            <div class="col-md-6 image-container">
-                <?php
-                    echo img('/public/img/'.$propriete->type_propriete."_".$propriete->id.'.jpg', true, 'class="custom-img"');
+            <div class="col-md-6 image-container text-center">
+                <?php 
+                    $maison_id = isset($propriete->id) ? $propriete->id : 1; // ID de la maison actuelle
+                    $mainImage = base_url("public/img/maison_{$maison_id}.jpg"); 
                 ?>
+                <img id="mainImage" src="<?= $mainImage; ?>" class="custom-img img-fluid">
+
+                <div class="thumbnail-container mt-3">
+                    <img src="<?= $mainImage; ?>" class="thumbnail-img img-fluid" onclick="resetImage()" title="Revenir à l'image principale">
+
+                    <?php 
+                    for ($i = 1; $i <= 3; $i++) { // Exemple : 3 images par maison
+                        $imgPath = base_url("public/img/{$maison_id}_piece_{$i}.jpg");
+                        echo '<img src="'.$imgPath.'" class="thumbnail-img img-fluid" onclick="changeImage(\''.$imgPath.'\')">';
+                    }
+                    ?>
+                </div>
             </div>
-            <!-- Colonne des détails -->
+
             <div class="col-md-6 details-container">
                 <h2><?php echo $soustitre; ?></h2>
                 <div class="details">
@@ -29,4 +42,17 @@
         </div>
     </div>
 </section>
+
+<!-- JavaScript pour changer l'image -->
+<script>
+    var defaultImage = "<?= $mainImage; ?>"; 
+
+    function changeImage(src) {
+        document.getElementById("mainImage").src = src;
+    }
+
+    function resetImage() {
+        document.getElementById("mainImage").src = defaultImage;
+    }
+</script>
 
