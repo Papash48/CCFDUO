@@ -58,7 +58,6 @@ class Connexion extends BaseController
                 return redirect()->to('propriet/propriete');
             }
             else {
-            // Si erreur d'identification
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
                 $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant que client";
                 return view('template/header')
@@ -68,7 +67,6 @@ class Connexion extends BaseController
             }
         }
         else {
-            // Si saisie non valide
             $data['erreurs'] = $this->validator->getErrors();
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";

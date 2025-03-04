@@ -15,6 +15,11 @@ class Client extends Model
         $query = $builder->getWhere(['nom' => $nom, 'mdp' => $pwd]);
         return count($query->getResult());
     }
-    
-    
+    public function proprietes()
+        //favoris
+    {
+        return $this->belongsToMany('App\Models\Propriete');
+    }
+
+
 }
