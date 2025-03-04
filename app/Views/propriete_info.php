@@ -17,7 +17,7 @@
                     <img src="<?= $mainImage; ?>" class="thumbnail-img img-fluid" onclick="resetImage()" title="Revenir à l'image principale">
 
                     <?php 
-                    for ($i = 1; $i <= 3; $i++) { // Exemple : 3 images par maison
+                    for ($i = 1; $i <= 2; $i++) { 
                         $imgPath = base_url("public/img/{$maison_id}_piece_{$i}.jpg");
                         echo '<img src="'.$imgPath.'" class="thumbnail-img img-fluid" onclick="changeImage(\''.$imgPath.'\')">';
                     }
