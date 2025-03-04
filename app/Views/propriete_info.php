@@ -8,6 +8,7 @@
         <div class="row">
             <div class="col-md-6 image-container text-center">
                 <?php 
+                
                     $maison_id = isset($propriete->id) ? $propriete->id : 1; // ID de la maison actuelle
                     $mainImage = base_url("public/img/maison_{$maison_id}.jpg"); 
                 ?>

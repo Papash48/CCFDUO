@@ -1,6 +1,5 @@
 /* Conteneur général */
 .container-fluid {
-    background-color: #f5f5f5; /* Gris clair pour plus de contraste */
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px; /* Limite la largeur du conteneur */
