@@ -13,4 +13,10 @@ class Propriete extends Model
     {
         return $this->belongsTo('App\Models\Agent','id_agent');
     }
+
+    public function clients()
+    {
+        //favoris
+        return $this->belongsToMany('App\Models\Client',);
+    }
 }

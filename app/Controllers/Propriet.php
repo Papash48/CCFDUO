@@ -123,6 +123,20 @@ class Propriet extends BaseController
             . view('template/footer');
     }
 
+    public function getFavoris()
+    {
+        $session = session();
+
+        $data['titre'] = "Voici vos favoris";
+        $data['soustitre'] = "";
+        $data['client'] = Client::find($session->get('id'));
+
+        return view('template/header')
+            . view('template/menu')
+            . view('favoris',$data)
+            . view('template/footer');
+    }
+
 
 }    
 
