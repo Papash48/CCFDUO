@@ -3,7 +3,8 @@
 <section>
     <h1><?php echo $titre ?></h1>
 
-    <form action="<?= base_url('propriet/search') ?>" method="GET">
+    <form action="<?= base_url('propriet/search') ?>" method="GET" class="form-inline">
+    <div class="form-row">
         <div class="form-group">
             <label for="prix_min">Prix minimum</label>
             <input type="number" class="form-control" id="prix_min" name="prix_min" step="0.01">
@@ -12,6 +13,8 @@
             <label for="prix_max">Prix maximum</label>
             <input type="number" class="form-control" id="prix_max" name="prix_max" step="0.01">
         </div>
+    </div>
+    <div class="form-row">
         <div class="form-group">
             <label for="nb_pieces">Nombre de pièces</label>
             <input type="number" class="form-control" id="nb_pieces" name="nb_pieces">
@@ -20,8 +23,10 @@
             <label for="localisation">Localisation</label>
             <input type="text" class="form-control" id="localisation" name="localisation">
         </div>
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-    </form>
+    </div>
+    <button type="submit" class="btn btn-primary">Rechercher</button>
+</form>
+
 
     <div class="container-fluid">
         <div class="row">
