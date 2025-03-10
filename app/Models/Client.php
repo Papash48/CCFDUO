@@ -16,9 +16,8 @@ class Client extends Model
         return count($query->getResult());
     }
     public function proprietes()
-        //favoris
     {
-        return $this->belongsToMany('App\Models\Propriete');
+        return $this->belongsToMany('App\Models\Propriete', 'client_propriete', 'client_id', 'propriete_id');
     }
 
 

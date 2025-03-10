@@ -26,12 +26,12 @@
                 echo anchor('propriet/propriet_ajout','Ajouter une propriétée<span class="sr-only">(current)</span>','class="nav-link"');
                 echo "</li>";
             }?>
-      <li class="nav-item m-x-1 on">
-          <?php echo anchor('connexion/logout','Déconnexion<span class="sr-only">(current)</span>','class="nav-link"'); ?>
-      </li>
         <li class="nav-item m-x-1">
             <?php echo anchor('propriet/favoris', 'Favoris<span class="sr-only">(current)</span>', 'class="nav-link"'); ?>
         </li>
+      <li class="nav-item m-x-1 on">
+          <?php echo anchor('connexion/logout','Déconnexion<span class="sr-only">(current)</span>','class="nav-link"'); ?>
+      </li>
     </ul> 
   </div>
 

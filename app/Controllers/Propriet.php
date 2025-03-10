@@ -126,16 +126,82 @@ class Propriet extends BaseController
     public function getFavoris()
     {
         $session = session();
+        $clientId = $session->get('id');
 
         $data['titre'] = "Voici vos favoris";
         $data['soustitre'] = "";
-        $data['client'] = Client::find($session->get('id'));
+        $data['client'] = Client::find($clientId);
+
+        foreach ($data['client']->proprietes as $propriete) {
+            $propriete->estEnFavoris = $data['client']->proprietes()->where('propriete_id', $propriete->id)->exists();
+        }
 
         return view('template/header')
             . view('template/menu')
-            . view('favoris',$data)
+            . view('favoris', $data)
             . view('template/footer');
     }
+
+
+    public function postAjouterFavori($proprieteId)
+    {
+        $session = session();
+        $clientId = $session->get('id');
+
+        if ($clientId) {
+            $client = Client::find($clientId);
+            $propriete = Propriete::find($proprieteId);
+
+            if ($client && $propriete) {
+                $client->proprietes()->attach($propriete->id);
+
+                return redirect()->back()->with('success', 'Propriété ajoutée aux favoris !');
+            } else {
+                return redirect()->back()->with('error', 'Client ou propriété non trouvé.');
+            }
+        } else {
+            return redirect()->to('login')->with('error', 'Veuillez vous connecter pour ajouter des favoris.');
+        }
+    }
+
+
+    public function postSupprimerFavori($proprieteId)
+    {
+        $session = session();
+        $clientId = $session->get('id');
+
+        if ($clientId) {
+            $client = Client::find($clientId);
+
+            if ($client) {
+                $client->proprietes()->detach($proprieteId);
+                return redirect()->back()->with('success', 'Propriété retirée des favoris !');
+            } else {
+                return redirect()->back()->with('error', 'Client ou propriété non trouvé.');
+            }
+        } else {
+            return redirect()->to('login')->with('error', 'Veuillez vous connecter pour gérer vos favoris.');
+        }
+    }
+
+    public function getCheckFavori($proprieteId)
+    {
+        $session = session();
+        $clientId = $session->get('id');
+
+        if ($clientId) {
+            $client = Client::find($clientId);
+            if ($client) {
+                $estEnFavoris = $client->proprietes()->where('propriete_id', $proprieteId)->exists();
+                return $this->response->setJSON(['estEnFavoris' => $estEnFavoris]);
+            }
+        }
+
+        return $this->response->setJSON(['estEnFavoris' => false]);
+    }
+
+
+
 
 
 }    

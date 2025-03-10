@@ -16,7 +16,6 @@ class Propriete extends Model
 
     public function clients()
     {
-        //favoris
-        return $this->belongsToMany('App\Models\Client',);
+        return $this->belongsToMany('App\Models\Client', 'client_propriete', 'propriete_id', 'client_id');
     }
 }
