@@ -1,6 +1,27 @@
-<link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
-<section>
-    <div class="card">
+<style>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    flex: 1;
+}
+
+    </style>
+    <link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
+
+    <section class="container">
         <div class="card-body">
             <h1><?php echo $titre;?></h1>
             <h2 class="text-muted"><?php echo $soustitre;?></h2>
@@ -33,7 +54,7 @@
                     <div class="col-md-1 text-end">
                     </div>
                     <div class="col-md-7">
-                        <?php    
+                        <?php
                         // input password
                         $inputpwd = array(
                             'name'          => 'pwd',
@@ -67,5 +88,8 @@
                 </div>
             <?php echo form_close(); ?>
         </div>
+    </div>
+    <div class="image-container">
+        <img src="<?php echo base_url('public/img/agent.png'); ?>" alt="Description de l'image">
     </div>
 </section>
