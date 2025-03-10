@@ -20,6 +20,6 @@ class Agen extends BaseController
 
 
     $agent->save();
-    return redirect()->to('/')->with('success', 'Agent mis à jour avec succès.');
+    return redirect()->to('connexion/compte')->with('success', 'Agent mis à jour avec succès.');
     }
 }

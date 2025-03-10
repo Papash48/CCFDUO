@@ -194,12 +194,7 @@ class Connexion extends BaseController
     {
         $session = session();
         $session->destroy();
-        $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
-        $data['soustitre'] = "Veuillez créer votre compte";
-        return view('template/header')
-        . view('template/menu')
-        . view('AcceuilConnexion',$data)
-        . view('template/footer');
+        return redirect()->to('/');
     }
 
 }

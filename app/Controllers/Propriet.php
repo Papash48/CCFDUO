@@ -78,17 +78,47 @@ class Propriet extends BaseController
             $file->move($uploadPath, $fileName);
         }
 
-        return redirect()->to('/')->with('success', 'Maison ajoutée avec succès.');
+        return redirect()->to('propriet/Propriete')->with('success', 'Maison ajoutée avec succès.');
     }
 
-    public function postAjout_appart(){
+    public function getAjout_appart(){
     $data['titre'] = "Quel type de propriété";
     $data['soustitre'] = "";
 
     return view('template/header')
         . view('template/menu')
-        . view('ajout_prop',$data)
+        . view('ajout_appart',$data)
         . view('template/footer');
+    }
+
+    public function postAjout_Appartement()
+    {
+        $session = session();
+        $id = $session->get('id');
+
+        $Propriete = new Propriete();
+        $Propriete->type_propriete = "Appartement";
+        $Propriete->nb_pieces = $this->request->getPost('nb_pieces');
+        $Propriete->localisation = $this->request->getPost('localisation');
+        $Propriete->prix = $this->request->getPost('prix');
+        $Propriete->description = $this->request->getPost('description');
+        $Propriete->charges = $this->request->getPost('charges');
+        $Propriete->agent()->associate(Agent::find($id));
+        $Propriete->save();
+
+        $file = $this->request->getFile('image');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $uploadPath = FCPATH . 'public/img/';
+            $fileName = 'Appartement_' . $Propriete->id . '.jpg';
+
+            if (!is_dir($uploadPath)) {
+                mkdir($uploadPath, 0755, true);
+            }
+
+            $file->move($uploadPath, $fileName);
+        }
+
+        return redirect()->to('propriet/Propriete')->with('success', 'Appartement ajoutée avec succès.');
     }
 
     public function getSearch()
