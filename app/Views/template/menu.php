@@ -24,7 +24,8 @@
             if($session->type === 'agent'){
                 echo "<li class='nav-item m-x-1'>";
                 echo anchor('propriet/propriet_ajout','Ajouter une propriétée<span class="sr-only">(current)</span>','class="nav-link"');
-                echo "</li>";
+                echo "</li>";;
+
             }?>
         <?php $session = session();
         if($session->type === 'client'){

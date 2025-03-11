@@ -230,8 +230,101 @@ class Propriet extends BaseController
         return $this->response->setJSON(['estEnFavoris' => false]);
     }
 
+    public function getModifPropriete($proprieteId)
+    {
+        $session = session();
+
+        $propriete = Propriete::find($proprieteId);
+
+        // Vérifiez que la propriété appartient à l'agent connecté
+        if ($propriete->agent->id != $session->id) {
+            return redirect()->to('/')->with('error', 'Vous n\'avez pas les droits pour modifier cette propriété.');
+        }
+
+        $data['titre'] = "Modifier la propriété " . $proprieteId;
+        $data['soustitre'] = "Veuillez modifier les informations";
+        $data['propriete'] = $propriete;
+        $data['agents'] = Agent::all(); // Si vous avez besoin de la liste des agents
+
+        return view('template/header')
+            . view('template/menu')
+            . view('form_modif_propriete', $data)
+            . view('template/footer');
+    }
+
+    public function postModifPropriete($proprieteid)
+    {
+        $session = session();
+        $agent_id = $session->get('agent_id');
 
 
+        $propriete = Propriete::find($proprieteid);
+
+        // Vérifiez que la propriété appartient à l'agent connecté
+        if ($propriete->agent_id != $agent_id) {
+            return redirect()->to('/')->with('error', 'Vous n\'avez pas les droits pour modifier cette propriété.');
+        }
+
+        // Mise à jour des champs texte
+        $propriete->type_propriete = $this->request->getPost('type_propriete');
+        $propriete->nb_pieces = $this->request->getPost('nb_pieces');
+        $propriete->localisation = $this->request->getPost('localisation');
+        $propriete->prix = $this->request->getPost('prix');
+        $propriete->description = $this->request->getPost('description');
+        $propriete->charges = $this->request->getPost('charges');
+        $propriete->EtatPropriete = $this->request->getPost('EtatPropriete');
+
+        // Gestion de l'agent
+        $agentId = $this->request->getPost('agent');
+        if ($agentId) {
+            $agent = Agent::find($agentId);
+            if ($agent) {
+                $propriete->agent()->associate($agent);
+            } else {
+                return redirect()->back()->with('error', 'Agent invalide.');
+            }
+        } else {
+            $propriete->agent()->dissociate();
+        }
+
+        // Gestion de l'image
+        $file = $this->request->getFile('image');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $uploadPath = FCPATH . 'public/img/';
+            $fileName = $propriete->type_propriete . "_" . $proprieteid . '.jpg';
+
+            // Assurez-vous que le dossier existe
+            if (!is_dir($uploadPath)) {
+                if (!mkdir($uploadPath, 0755, true)) {
+                    return redirect()->back()->with('error', 'Impossible de créer le dossier d\'upload.');
+                }
+            }
+
+            // Vérifiez si l'ancienne image existe et supprimez-la
+            $oldImagePath = $uploadPath . $fileName;
+            if (file_exists($oldImagePath)) {
+                if (!unlink($oldImagePath)) {
+                    return redirect()->back()->with('error', 'Impossible de supprimer l\'ancienne image.');
+                }
+            }
+
+            // Déplacez la nouvelle image
+            if (!$file->move($uploadPath, $fileName)) {
+                return redirect()->back()->with('error', 'Erreur lors du déplacement de la nouvelle image.');
+            }
+        }
+
+        // Sauvegarder les modifications
+        $propriete->save();
+
+        return redirect()->to('propriet/propriete')->with('success', 'Propriété mise à jour avec succès.');
+
+
+        // Sauvegarder les modifications
+        $propriete->save();
+
+        return redirect()->to('propriet/propriete')->with('success', 'Propriété mise à jour avec succès.');
+    }
 
 
 }    

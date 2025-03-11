@@ -4,6 +4,7 @@
 <section>
 
     <h1><?php echo $titre; ?></h1>
+    <?php $session = session(); ?>
 
     <div class="container-fluid">
         <div class="row">

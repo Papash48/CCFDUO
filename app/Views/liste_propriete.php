@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('public/css/affich_maison.css'); ?>">
-
 <section>
-    <h1><?php echo $titre; ?></h1>
+    <h1><?php echo $titre ?></h1>
     <?php $session = session(); ?>
 
     <form action="<?= base_url('propriet/search') ?>" method="GET" class="form-inline">
@@ -29,35 +28,29 @@
         <button type="submit" class="btn btn-primary">Rechercher</button>
     </form>
 
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">
-                <h2><?php echo $soustitre; ?></h2>
+                <h2><?php echo $soustitre ?></h2>
                 <table class="table">
                     <?php
-                    $cpt = 0;
+                    $cpt=0;
                     echo "<tr>";
                     foreach ($proprietes as $propriete) {
-                        echo "<td width='35%' class='text-center'> <a href='info/$propriete->id' >";
+                        echo "<td width=35%' class='text-center'> <a href='info/$propriete->id' >";
                         echo "<br>";
-                        echo img('public/img/' . $propriete->type_propriete . "_" . $propriete->id . '.jpg', true, 'class="img-fluid rounded"');
-                        echo "<br>";
-                        echo $propriete->type_propriete . "<br>";
-                        echo "Nombre de pièces : " . $propriete->nb_pieces . "<br>";
-                        echo "Localisation : " . $propriete->localisation . "<br>";
-                        echo "Prix : " . $propriete->prix . "<br>";
-                        echo $propriete->description . "<br>";
-                        echo "Montant des charges : " . $propriete->charges . "<br>";
-                        echo "État de la propriété : " . $propriete->EtatPropriete . "<br>";
-
-                        // Si l'agent connecté est le propriétaire de la propriété, afficher le lien de modification
-                        if($propriete->agent->id === $session->id){
-                            echo "<a href='" . base_url('propriet/ModifPropriete/' . $propriete->id) . "' class='btn btn-secondary'>Modifier</a>";
-                        }
-
+                        echo img('public/img/'.$propriete->type_propriete."_".$propriete->id.'.jpg',true,'class="img-fluid rounded"');echo"<br>";
+                        echo $propriete->type_propriete ."<br>";
+                        echo "Nombres de pièces : ".$propriete->nb_pieces ."<br>";
+                        echo "Localisation : ".$propriete->localisation ."<br>";
+                        echo "Prix : ".$propriete->prix ."<br>";
+                        echo $propriete->description ."<br>";
+                        echo "Montant des charges : ".$propriete->charges ."<br>";
+                        echo "Etat de la propriété : ".$propriete->EtatPropriete ."<br>";
                         echo "</a></td>";
                         $cpt++;
-                        if ($cpt % 3 == 0) {
+                        if ($cpt%3==0) {
                             echo "</tr><tr>";
                         }
                     }
