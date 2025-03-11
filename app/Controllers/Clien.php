@@ -20,7 +20,7 @@ class Clien extends BaseController
 
 
     $client->save();
-    return redirect()->to('/')->with('success', 'Client mis à jour avec succès.');
+    return redirect()->to('connexion/compte')->with('success', 'Client mis à jour avec succès.');
     }
 
 

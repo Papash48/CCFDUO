@@ -4,80 +4,67 @@
         <div class="card-body">
             <h1><?php echo $titre; ?></h1>
             <h2 class="text-muted"><?php echo $soustitre; ?></h2>
-            <?php echo form_open('propriet/ajout_appart'); ?>
+            <?php echo form_open_multipart('propriet/ajout_appartement'); ?>
             <div class="row">
                 <div class="col-md-1 text-end">
                 </div>
                 <div class="col-md-7">
                     <?php
-                    echo "<label for='nom'>Nom :</label>";
+                    echo "<label for='nb_pieces'>Nombres de pièces :</label>";
                     $input = array(
-                        'name'          => 'nom',
-                        'placeholder'   => 'Nom',
+                        'name'          => 'nb_pieces',
+                        'placeholder'   => 'Nombres de pièces :',
                         'class'         => 'form-control',
                         'required'      => 'true'
                     );
                     echo form_input($input);
 
-                    echo "<label for='prenom'>Prenom :</label>";
+                    echo "<label for='localisation'> Localisation :</label>";
                     $input = array(
-                        'name'          => 'prenom',
-                        'placeholder'   => 'Prénom',
+                        'name'          => 'localisation',
+                        'placeholder'   => 'Localisation',
                         'class'         => 'form-control',
                         'required'      => 'true'
                     );
                     echo form_input($input);
 
-                    // Date de naissance avec calendrier
-                    echo "<label for='daten'>Date de Naissance :</label>";
+                    echo "<label for='prix'> Prix:</label>";
                     $input = array(
-                        'name'          => 'daten',
-                        'id'            => 'daten',
-                        'placeholder'   => 'Date de Naissance',
-                        'type'          => 'date',
+                        'name'          => 'prix',
+                        'placeholder'   => 'Prix',
                         'class'         => 'form-control',
                         'required'      => 'true'
                     );
                     echo form_input($input);
 
-                    // Adresse email avec validation
-                    echo "<label for='mail'>Adresse Mail :</label>";
+                    echo "<label for='description'> Sa description :</label>";
                     $input = array(
-                        'name'          => 'mail',
-                        'id'            => 'mail',
-                        'placeholder'   => 'Adresse Mail',
+                        'name'          => 'description',
+                        'placeholder'   => 'Description',
                         'class'         => 'form-control',
-                        'type'          => 'email', // Spécifie un champ email
                         'required'      => 'true'
                     );
                     echo form_input($input);
 
-                    // Numéro de téléphone avec validation
-                    echo "<label for='num'>Numéro de Téléphone :</label>";
+                    echo "<label for='charges'> Charges :</label>";
                     $input = array(
-                        'name'          => 'num',
-                        'id'            => 'num',
-                        'placeholder'   => 'Numéro de Téléphone',
+                        'name'          => 'charges',
+                        'placeholder'   => 'Charges',
                         'class'         => 'form-control',
-                        'pattern'       => '[0-9]{10}', // Vérifie 10 chiffres
-                        'title'         => 'Le numéro de téléphone doit contenir exactement 10 chiffres.',
-                        'required'      => 'true'
-                    );
-                    echo form_input($input);
-
-                    // Mot de passe
-                    echo "<label for='mdp'>Mot de Passe :</label>";
-                    $input = array(
-                        'name'          => 'mdp',
-                        'id'            => 'mdp',
-                        'placeholder'   => 'Mot de Passe',
-                        'class'         => 'form-control',
-                        'type'          => 'password',
                         'required'      => 'true'
                     );
                     echo form_input($input);
                     echo "<br>";
-                    // Bouton de soumission
+
+                    echo "<label for='image'> Image :</label>";
+                    $file = array(
+                        'name'  => 'image',
+                        'class' => 'form-control',
+                        'required' => 'true'
+                    );
+                    echo form_upload($file);
+                    echo "<br>";
+
                     $subm = array(
                         'type'      => 'submit',
                         'content'   => 'Enregistrer les informations',
