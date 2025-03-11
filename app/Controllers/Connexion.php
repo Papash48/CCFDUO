@@ -71,7 +71,7 @@ class Connexion extends BaseController
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-            . view('template/menu_acceuil')
+            . view('template/menu_accueil')
             . view('login_formClient',$data)
             . view('template/footer');
         }
@@ -123,7 +123,7 @@ class Connexion extends BaseController
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-             . view('template/menu_acceuil')
+             . view('template/menu_accueil')
              . view('login_formAgent',$data)
              . view('template/footer');
         }
