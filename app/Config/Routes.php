@@ -10,3 +10,5 @@ $route['default_controller'] = 'Accueil';
 $route['connexion/client'] = 'Connexion/client';
 $route['connexion/agent'] = 'Connexion/agent';
 $route['connexion/creation'] = 'Connexion/creation';
+
+$routes->get('/mentions_legales', 'Home::mentions_legales'); 

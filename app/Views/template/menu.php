@@ -1,3 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barre de Navigation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color: #463f32;
+        }
+        .nav-link {
+            color: #ffffff !important;
+        }
+        .nav-link:hover {
+            color: #f0a500 !important;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Boutons à gauche -->
+                <li class="nav-item">
+                    <a class="nav-link" href="propriet/propriete">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="propriet/presentation">Présentation</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- Si l'utilisateur est connecté -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="propriet/favoris">Favoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="connexion/logout">Déconnexion</a>
+                    </li>
+                <?php else: ?>
+                    <!-- Si l'utilisateur n'est pas connecté -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="connexion/register">S'inscrire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="connexion/login">Se connecter</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
 <nav>
     <?php
     $lien = '<aside class="pull-xs-right m-r-2" id="personal_space">

@@ -13,4 +13,13 @@ class Home extends BaseController
          . view('AccueilConnexion',$data) //a remettre vers la fin 'popup_view'
          . view('template/footer');
     }
+    public function mentions_legales()
+    {
+      $data['titre'] = "Mentions légales - Akor Adams Immobilier";
+        
+        return view('template/header')  
+            . view('template/menu_accueil') 
+            . view('mentions_legales', $data) 
+            . view('template/footer'); 
+    }
 }
