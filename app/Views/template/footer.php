@@ -25,13 +25,21 @@
               <i class="fa fa-twitter fa-2x"></i>
             </a>
           </div>
-          
+          <h5 class="font-weight-bold text-uppercase">Mentions légales</h5>
+        <div>
+          <a href="<?= site_url('mentions_legales'); ?>" class="text-white">
+
+            <i class="fa fa-file-text-o fa-2x"></i> 
+            <span>Mentions légales</span>
+          </a>
+        </div>
         </div>
       </div>
       <hr class="horizontal-line bg-white">
       <p class="text-center mt-4">
         Akor Adams. &copy; Une réalisation De Barros Mathis et Pruniere Samuel
       </p>
+      
     </div>
   </div>
 </footer>
