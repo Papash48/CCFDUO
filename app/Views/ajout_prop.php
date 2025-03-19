@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="<?= base_url('public/css/main.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('public/css/modif.css'); ?>">
+
 <section>
 
     <h1><?php echo $titre ?></h1>
