@@ -13,7 +13,7 @@ class Connexion extends BaseController
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
         $data['soustitre'] = "Veuillez saisir vos identifiants de connexion en tant que client.";
         return view('template/header')
-        . view('template/menu')
+        . view('template/menu_accueil')
         . view('login_formClient',$data)
         . view('template/footer');
     }
@@ -23,7 +23,7 @@ class Connexion extends BaseController
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
         $data['soustitre'] = "Veuillez saisir vos identifiants de connexion en tant qu'agent. ";
         return view('template/header')
-        . view('template/menu')
+        . view('template/menu_accueil')
         . view('login_formAgent',$data)
         . view('template/footer');
     }
@@ -171,7 +171,7 @@ class Connexion extends BaseController
         $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
         $data['soustitre'] = "Veuillez créer votre compte";
         return view('template/header')
-        . view('template/menu')
+        . view('template/menu_accueil')
         . view('creation_compte',$data)
         . view('template/footer');
     }

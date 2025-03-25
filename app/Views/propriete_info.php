@@ -10,9 +10,12 @@
         <div class="row">
             <div class="col-md-6 image-container text-center">
                 <?php
+                
+                    $propriete_id = isset($propriete->id) ? $propriete->id : 1;
+                    $type = strtolower($propriete->type_propriete); // "maison" ou "appartement"
 
-                    $maison_id = isset($propriete->id) ? $propriete->id : 1; // ID de la maison actuelle
-                    $mainImage = base_url("public/img/maison_{$maison_id}.jpg");
+                    $nb_photos =($type == "maison") ? 2 : 1;
+                    $mainImage = base_url("public/img/{$type}_{$propriete_id}.jpg");
                 ?>
                 <img id="mainImage" src="<?= $mainImage; ?>" class="custom-img img-fluid">
 
@@ -20,8 +23,9 @@
                     <img src="<?= $mainImage; ?>" class="thumbnail-img img-fluid" onclick="resetImage()" title="Revenir à l'image principale">
 
                     <?php
-                    for ($i = 1; $i <= 2; $i++) {
-                        $imgPath = base_url("public/img/{$maison_id}_piece_{$i}.jpg");
+                    for ($i = 1; $i <= $nb_photos; $i++) { 
+                        
+                        $imgPath = base_url("public/img/{$propriete_id}_piece_{$i}.jpg");
                         echo '<img src="'.$imgPath.'" class="thumbnail-img img-fluid" onclick="changeImage(\''.$imgPath.'\')">';
                     }
                     ?>
@@ -41,46 +45,43 @@
                     echo "<p><strong>État :</strong> " . $propriete->EtatPropriete . "</p>";
                     ?>
                     <div id="favoris-button-container">
-                        <!-- Les boutons seront injectés ici par JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- JavaScript pour vérifier l'état des favoris et mettre à jour le bouton -->
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     const proprieteId = <?php echo $propriete->id; ?>;
                     const buttonContainer = document.getElementById('favoris-button-container');
 
-                    // Fonction pour vérifier l'état des favoris
+                    // Fonction pour vérifier si la propriété est en favoris
                     function checkFavoriStatus() {
                         fetch(`<?= base_url('propriet/checkFavori/') ?>` + proprieteId)
                             .then(response => response.json())
                             .then(data => {
                                 if (data.estEnFavoris) {
                                     buttonContainer.innerHTML = `
-                            <form method="post" action="<?= base_url('propriet/SupprimerFavori/') ?>${proprieteId}">
-                                <button type="submit" name="supprimer">Retirer des favoris</button>
-                            </form>
-                        `;
+                                        <form method="post" action="<?= base_url('propriet/SupprimerFavori/') ?>${proprieteId}">
+                                            <button type="submit" name="supprimer">Retirer des favoris</button>
+                                        </form>
+                                    `;
                                 } else {
                                     buttonContainer.innerHTML = `
-                            <form method="post" action="<?= base_url('propriet/AjouterFavori/') ?>${proprieteId}">
-                                <button type="submit" name="ajout">Ajouter aux favoris</button>
-                            </form>
-                        `;
+                                        <form method="post" action="<?= base_url('propriet/AjouterFavori/') ?>${proprieteId}">
+                                            <button type="submit" name="ajout">Ajouter aux favoris</button>
+                                        </form>
+                                    `;
                                 }
                             })
-                            .catch(error => console.error('Error:', error));
+                            .catch(error => console.error('Erreur:', error));
                     }
 
-                    // Vérifiez l'état des favoris au chargement de la page
+                    // Vérifier l'état des favoris au chargement de la page
                     checkFavoriStatus();
                 });
             </script>
 
 </section>
-
 
 <!-- JavaScript pour changer l'image -->
 <script>
@@ -94,4 +95,3 @@
         document.getElementById("mainImage").src = defaultImage;
     }
 </script>
-
