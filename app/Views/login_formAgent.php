@@ -33,7 +33,7 @@ margin-left: 40px;}
                     <?php
                     $input = array(
                         'name'          => 'login',
-                        'placeholder'   => 'Nom d\'utilisateur de l\'agent',
+                        'placeholder'   => "Email de l'agent",
                         'class'         => 'form-control'
                     );
                     echo form_input($input); ?>

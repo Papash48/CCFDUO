@@ -33,7 +33,7 @@ class Connexion extends BaseController
     {
         $rules = [
             "login" => [
-                "label" => "'Identifiant'", 
+                "label" => "'Email'",
                 "rules" => "required"
             ],
             "pwd" => [
@@ -48,9 +48,9 @@ class Connexion extends BaseController
             $clientModele = new Client();
             if ($clientModele->estClient($login,$pwd)) {
                 $session = session();
-                $id = Client::where('nom', $login)->where('mdp', $pwd)->get()[0]->id;
+                $id = Client::where('mail', $login)->where('mdp', $pwd)->get()[0]->id;
                 $sessiondata = array(
-                       'nom'  => $this->request->getPost('login'),
+                       'mail'  => $this->request->getPost('login'),
                        'id'  => $id,
                        'type' => "client"
                     );
@@ -83,7 +83,7 @@ class Connexion extends BaseController
     {
         $rules = [
             "login" => [
-                "label" => "'Identifiant'", 
+                "label" => "'Email'",
                 "rules" => "required"
             ],
             "pwd" => [
@@ -98,9 +98,9 @@ class Connexion extends BaseController
             $agentModele = new Agent();
             if ($agentModele->estAgent($login,$pwd)) {
                 $session = session();
-                $id = Agent::where('nom', $login)->where('mdp', $pwd)->get()[0]->id;
+                $id = Agent::where('mail', $login)->where('mdp', $pwd)->get()[0]->id;
                 $sessiondata = array(
-                       'nom'  => $this->request->getPost('login'),
+                       'mail'  => $this->request->getPost('login'),
                         'id'  => $id,
                         'type' => "agent"
                     );

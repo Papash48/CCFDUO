@@ -34,7 +34,7 @@ margin-left: 40px;}
                     // input login
                     $input = array(
                         'name'          => 'login',
-                        'placeholder'   => 'Nom d\'utilisateur du client',
+                        'placeholder'   => "Email du client",
                         'class'         => 'form-control'
                     );
                     echo form_input($input); ?>

@@ -14,10 +14,10 @@ class Agent extends Model
         return $this->hasMany('App\Models\Propriete');
     }
 
-    public function estAgent($nom,$pwd) {
+    public function estAgent($mail,$pwd) {
         $db = \Config\Database::connect();
         $builder = $db->table('agents');
-        $query = $builder->getWhere(['nom' => $nom, 'mdp' => $pwd]);
+        $query = $builder->getWhere(['mail' => $mail, 'mdp' => $pwd]);
         return count($query->getResult());
     }
     
