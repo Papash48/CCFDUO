@@ -17,8 +17,8 @@
                 <?php echo anchor('propriet/propriete', 'Accueil<span class="sr-only">(current)</span>', 'class="nav-link"'); ?>
             </li>
             <li class="nav-item m-x-1 on">
-                <?php echo anchor('connexion/creation', 'S/inscrire<span class="sr-only">(current)</span>', 'class="nav-link"'); ?>
-            </li>
+                 <?php echo anchor('connexion/creation', "S'inscrire<span class='sr-only'>(current)</span>", 'class="nav-link"'); ?>
+             </li>
             <li class="nav-item m-x-1 on">
                 <?php echo anchor('connexion/logout', 'Se Connecter<span class="sr-only">(current)</span>', 'class="nav-link"'); ?>
             </li>
