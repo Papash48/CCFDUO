@@ -161,7 +161,7 @@ class Connexion extends BaseController
             $data['soustitre'] = "Veuillez vous connecter";
             return view('template/header')
             . view('template/menu')
-            . view('AccueilConnexion',$data)
+            . view('popup_view',$data)
             . view('template/footer');
         }
         }
