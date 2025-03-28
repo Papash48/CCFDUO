@@ -34,7 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'AuthProtect'   => \App\Filters\AuthProtect::class
+        'AgentProtect'   => \App\Filters\AgentProtect::class
     ];
 
     /**
@@ -105,6 +105,6 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
-        //'AuthProtect' => ['before' => ['propriet/propriet_ajout','propriet/ajout_maison','propriet/ajout_appart','propriet/ModifPropriet/*']]
+        'AgentProtect' => ['before' => ['Agen/*','propriet/Propriet_ajout','propriet/Ajout_maison','propriet/Ajout_appart','propriet/Ajout_Appartement','propriet/ModifPropriete']]
     ];
 }
