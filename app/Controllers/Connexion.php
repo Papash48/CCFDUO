@@ -33,27 +33,29 @@ class Connexion extends BaseController
     {
         $rules = [
             "login" => [
-                "label" => "'Email'",
-                "rules" => "required"
+                "label" => "Email",
+                "rules" => "required|valid_email"
             ],
             "pwd" => [
-                "label" => "'Mot de passe'", 
+                "label" => "Mot de passe",
                 "rules" => "required"
             ]
         ];
-        
+
         if ($this->validate($rules)) {
             $login = $this->request->getPost('login');
             $pwd = $this->request->getPost('pwd');
             $clientModele = new Client();
-            if ($clientModele->estClient($login,$pwd)) {
+
+            $client = Client::where('mail', $login)->first();
+
+            if ($client && password_verify($pwd, $client->mdp_crypte)) {
                 $session = session();
-                $id = Client::where('mail', $login)->where('mdp', $pwd)->get()[0]->id;
-                $sessiondata = array(
-                       'mail'  => $this->request->getPost('login'),
-                       'id'  => $id,
-                       'type' => "client"
-                    );
+                $sessiondata = [
+                    'mail' => $login,
+                    'id' => $client->id,
+                    'type' => "client"
+                ];
                 $session->set($sessiondata);
                 return redirect()->to('propriet/propriete');
             }
@@ -61,9 +63,9 @@ class Connexion extends BaseController
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
                 $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant que client";
                 return view('template/header')
-                . view('template/menu')
-                . view('login_formClient',$data)
-                . view('template/footer');
+                    . view('template/menu')
+                    . view('login_formClient',$data)
+                    . view('template/footer');
             }
         }
         else {
@@ -71,63 +73,62 @@ class Connexion extends BaseController
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-            . view('template/menu_accueil')
-            . view('login_formClient',$data)
-            . view('template/footer');
+                . view('template/menu_accueil')
+                . view('login_formClient',$data)
+                . view('template/footer');
         }
     }
-
 
 
     public function postLoginAgent()
     {
         $rules = [
             "login" => [
-                "label" => "'Email'",
-                "rules" => "required"
+                "label" => "Email",
+                "rules" => "required|valid_email"
             ],
             "pwd" => [
-                "label" => "'Mot de passe'", 
+                "label" => "Mot de passe",
                 "rules" => "required"
             ]
         ];
-        
+
         if ($this->validate($rules)) {
             $login = $this->request->getPost('login');
             $pwd = $this->request->getPost('pwd');
             $agentModele = new Agent();
-            if ($agentModele->estAgent($login,$pwd)) {
+
+            $agent = Agent::where('mail', $login)->first();
+
+            if ($agent && password_verify($pwd, $agent->mdp_crypte)) {
                 $session = session();
-                $id = Agent::where('mail', $login)->where('mdp', $pwd)->get()[0]->id;
-                $sessiondata = array(
-                       'mail'  => $this->request->getPost('login'),
-                        'id'  => $id,
-                        'type' => "agent"
-                    );
+                $sessiondata = [
+                    'mail' => $login,
+                    'id' => $agent->id,
+                    'type' => "agent"
+                ];
                 $session->set($sessiondata);
                 return redirect()->to('propriet/propriete');
             }
             else {
-            // Si erreur d'identification
                 $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
                 $data['soustitre'] = "Les identifiants saisis ne permettent pas de se connecter en tant qu'agent";
                 return view('template/header')
-                . view('template/menu')
-                . view('login_formAgent',$data)
-                . view('template/footer');
+                    . view('template/menu')
+                    . view('login_formAgent',$data)
+                    . view('template/footer');
             }
         }
         else {
-            // Si saisie non valide
             $data['erreurs'] = $this->validator->getErrors();
             $data['titre'] = "Bienvenue sur Akor Adams Immobilier";
             $data['soustitre'] = "Saisie invalide";
             return view('template/header')
-             . view('template/menu_accueil')
-             . view('login_formAgent',$data)
-             . view('template/footer');
+                . view('template/menu_accueil')
+                . view('login_formAgent',$data)
+                . view('template/footer');
         }
-    } 
+    }
 
     public function getCompte()
     {
@@ -185,6 +186,7 @@ class Connexion extends BaseController
         $client->mail = $this->request->getPost('mail');
         $client->num = $this->request->getPost('num');
         $client->mdp = $this->request->getPost('mdp');
+        $client->mdp_crypte = password_hash($client->mdp, PASSWORD_BCRYPT);
         $client->save();
 
         return redirect()->to('connexion/client');
